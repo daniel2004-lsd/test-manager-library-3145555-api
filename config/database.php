@@ -95,7 +95,7 @@ return [
             'charset' => env('DB_CHARSET', 'utf8'),
             'prefix' => '',
             'prefix_indexes' => true,
-            'search_path' => 'public',
+            'search_path' => array_values(array_filter(array_map('trim', explode(',', (string) env('DB_SEARCH_PATH', 'library, public'))))),
             'sslmode' => env('DB_SSLMODE', 'prefer'),
         ],
 

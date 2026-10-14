@@ -1,4 +1,4 @@
-FROM php:8.3-cli-alpine
+FROM php:8.4-cli-alpine
 
 RUN apk add --no-cache $PHPIZE_DEPS git unzip libzip-dev oniguruma-dev postgresql-dev \
     && docker-php-ext-install pdo_pgsql zip pcntl bcmath opcache \
